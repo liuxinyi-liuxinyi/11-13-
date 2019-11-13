@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	body{
+		display:flex;
+	}
+		.tabs_box{
+			width: 500px;
+			border:1px solid red;
+		}
+		ul{
+			list-style: none;
+			padding:0;
+			margin:0;
+		}
+		.tabs .cur{
+			background:#046fbb;
+		}
+		.tabs li{
+			width: 80px;
+			padding:10px;
+			padding-left:24px;
+			background:url('icon1.png') no-repeat 10px;
+		}
+		.tabs{
+			display:flex;
+		}
+		.biaoti div{
+			height: 200px;
+			line-height:1.5;
+			display:none;
+		}
+		.biaoti .show{
+			display:block;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="neirong" class="tabs_box">
+		<ul class="tabs" >
+			<li class="cur">通知公告</li>
+			<li>学术动态</li>
+			<li>学院新闻</li>
+		</ul>
+		<div class="biaoti">
+			<div class="show">
+				<p>我院学报被评为“RCCSE中国高职高专成高院学报类核心报刊“</p>
+				<hr>
+				<p>教育部只能制造外聘企业专家崔晓辉先生来我院作专题报告河北省高等职业</p>
+				<hr>
+				<p>河北省高等职业院校工业机器人技术应用技术培训会在我校召开</p>
+			</div>
+			<div>
+				<p>河北软件职业技术学院体育馆地面铺设与墙体防护工程更正公告</p>
+				<hr>
+				<p>河北软甲职业技术轩辕体育馆体育设施采购项目招标公告</p>
+				<hr>
+				<p>河北软件职业技术轩辕体育馆地面铺设与墙体防护工程公开招标</p>
+			</div>
+			<div>
+				<p>我院举办2020节毕业生大型双选会</p>
+				<hr>
+				<p>2019年交工体育馆地面铺设与墙体防护工程公开招标</p>
+				<hr>
+				<p>体育馆地面铺设与墙体防护工程公开招标体育馆地面铺设与墙体防护工程公开招标</p>
+			</div>
+		</div>
+	</div>
+	<div id="neirong1" class="tabs_box">
+		<ul class="tabs">
+			<li class="cur">图2通知公告</li>
+			<li>图2学术动态</li>
+			<li>图2学院新闻</li>
+		</ul>
+		<div class="biaoti">
+			<div class="show">
+				<p>图2我院学报被评为“RCCSE中国高职高专成高院学报类核心报刊“</p>
+				<hr>
+				<p>图2教育部只能制造外聘企业专家崔晓辉先生来我院作专题报告河北省高等职业</p>
+				<hr>
+				<p>图2河北省高等职业院校工业机器人技术应用技术培训会在我校召开</p>
+			</div>
+			<div>
+				<p>图2河北软件职业技术学院体育馆地面铺设与墙体防护工程更正公告</p>
+				<hr>
+				<p>图2河北软甲职业技术轩辕体育馆体育设施采购项目招标公告</p>
+				<hr>
+				<p>图2河北软件职业技术轩辕体育馆地面铺设与墙体防护工程公开招标</p>
+			</div>
+			<div>
+				<p>图2我院举办2020节毕业生大型双选会</p>
+				<hr>
+				<p>图2019年交工体育馆地面铺设与墙体防护工程公开招标</p>
+				<hr>
+				<p>图2体育馆地面铺设与墙体防护工程公开招标体育馆地面铺设与墙体防护工程公开招标</p>
+			</div>
+		</div>
+	</div>
+	<script>
+			//获取这个盒子
+	function tab(id){
+		var box=document.getElementById(id);
+			var ul=box.getElementsByClassName('tabs')[0];
+			var lis=ul.getElementsByTagName('li');
+			var div=box.getElementsByClassName('biaoti')[0];
+			var divs=div.getElementsByTagName('div');
+			for(var i=0;i<lis.length;i++){
+				lis[i].index=i;
+				lis[i].onclick=function(){
+				for(var i=0;i<lis.length;i++){
+					lis[i].className='';
+				}
+				for(var i=0;i<divs.length;i++){
+					divs[i].className="";
+				}
+				this.className='cur';
+				divs[this.index].className='show';
+			}
+		}
+	}
+	tab('neirong');
+	tab('neirong1');
+	</script>
+</body>
+</html>
